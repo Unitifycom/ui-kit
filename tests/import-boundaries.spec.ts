@@ -19,10 +19,10 @@ it('keeps component modules independent from the root barrel to avoid ESM cycles
 })
 it('exports direct icon paths that match the actual component modules', () => {
     const manifest = JSON.parse(
-        readFileSync(resolve(import.meta.dirname, '../packages/icons/package.json'), 'utf8'),
+        readFileSync(resolve(import.meta.dirname, '../packages/ui/package.json'), 'utf8'),
     )
-    expect(manifest.exports['./*']).toEqual({
-        types: './dist/components/*.d.ts',
-        import: './dist/components/*.js',
+    expect(manifest.exports['./icons/*']).toEqual({
+        types: './dist/icons/components/*.d.ts',
+        import: './dist/icons/components/*.js',
     })
 })

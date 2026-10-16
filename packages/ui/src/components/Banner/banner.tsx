@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useCallback } from 'react'
 
-import { ChevronRight } from '@unitifycom/icons'
+import { ChevronRight } from '../../icons/index'
 
 import { colors } from '../../colors'
 import { sendAnalyticsClickEvent } from '../_utils/analytics'

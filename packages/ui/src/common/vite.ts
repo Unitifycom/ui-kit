@@ -4,7 +4,8 @@ export function designSystemLess(theme: Record<string, string | number>, legacyT
         javascriptEnabled: true,
         additionalData(source: string, filename: string) {
             const variables =
-                filename.includes('/packages/ui/') || filename.includes('/@unitifycom/ui/')
+                (filename.includes('/packages/ui/') || filename.includes('/@unitifycom/ui/')) &&
+                !filename.endsWith('/antd.less')
                     ? {
                           '@ant-prefix': 'condo',
                           '@text-color': '#222',
@@ -49,7 +50,7 @@ export function localDesignSystem() {
                 this.emitFile({
                     type: 'asset',
                     fileName: `licenses/${fileName}`,
-                    source: readFileSync(new URL(`fonts/${fileName}`, import.meta.url), 'utf8'),
+                    source: readFileSync(new URL(`../fonts/${fileName}`, import.meta.url), 'utf8'),
                 })
             }
         },

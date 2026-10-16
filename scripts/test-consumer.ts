@@ -27,6 +27,8 @@ try {
     const artifacts: Array<{ name: string; filename: string }> = JSON.parse(
         await readFile(resolve(root, 'dist/packages/manifest.json'), 'utf8'),
     )
+    assert.equal(artifacts.length, 1, 'Install exactly one UI kit archive')
+    assert.equal(artifacts[0].name, '@unitifycom/ui')
     for (const artifact of artifacts)
         dependencies[artifact.name] = 'file:' + resolve(root, 'dist/packages', artifact.filename)
     await writeFile(
@@ -36,9 +38,7 @@ try {
             type: 'module',
             dependencies,
             overrides: Object.fromEntries(
-                Object.entries(dependencies).filter(
-                    ([name]) => name.startsWith('@unitifycom/') || name.startsWith('@types/react'),
-                ),
+                Object.entries(dependencies).filter(([name]) => name.startsWith('@types/react')),
             ),
         }),
     )
@@ -59,11 +59,11 @@ try {
         import { IntlProvider } from 'react-intl'
         import { Button } from '@unitifycom/ui/components/Button'
         import { Checkbox, Radio, Tag, Tooltip, UIProvider, Input } from '@unitifycom/ui'
-        import { Check } from '@unitifycom/icons/Check'
-        import { DesignSystemProvider, LegacyTable, DateRangePicker } from '@unitifycom/ui-common'
+        import { Check } from '@unitifycom/ui/icons/Check'
+        import { DesignSystemProvider, LegacyTable, DateRangePicker } from '@unitifycom/ui'
+        import '@unitifycom/ui/staff.css'
         import '@unitifycom/ui/styles.css'
-        import '@unitifycom/ui-common/staff.css'
-        import '@unitifycom/ui-common/styles.css'
+        import '@unitifycom/ui/style-vars/css'
         import labels from './labels.json'
         const icon: React.ReactElement = <Check />
         // @ts-expect-error Invalid size must be rejected by the published declarations.

@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
-it.each(['ui', 'ui-common'])('provides type entry points for every %s CSS export', (name) => {
+it.each(['ui'])('provides type entry points for every %s CSS export', (name) => {
     const manifest = JSON.parse(
         readFileSync(new URL(`../packages/${name}/package.json`, import.meta.url), 'utf8'),
     )

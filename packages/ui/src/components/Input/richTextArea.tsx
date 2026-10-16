@@ -42,7 +42,7 @@ import {
     Smile,
     Subtitles,
     Undo,
-} from '@unitifycom/icons'
+} from '../../icons/index'
 
 import { Input as TextInput } from './input'
 

@@ -2,7 +2,7 @@ import { Radio as DefaultRadio } from 'antd'
 import classNames from 'classnames'
 import React, { useState, useCallback } from 'react'
 
-import { ChevronDown } from '@unitifycom/icons'
+import { ChevronDown } from '../../icons/index'
 import { Radio } from './radio'
 import { Typography } from '../Typography'
 import { Space } from '../Space'

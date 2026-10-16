@@ -3,7 +3,14 @@ import classNames from 'classnames'
 import debounce from 'lodash/debounce'
 import React, { MouseEventHandler, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { MoreVertical, GripHorizontal, SortAsc, SortDesc, Filter, Close } from '@unitifycom/icons'
+import {
+    MoreVertical,
+    GripHorizontal,
+    SortAsc,
+    SortDesc,
+    Filter,
+    Close,
+} from '../../../icons/index'
 import { Button } from '../../Button'
 import { Dropdown } from '../../Dropdown'
 import { ColumnSettings } from './ColumnSettings.tsx'

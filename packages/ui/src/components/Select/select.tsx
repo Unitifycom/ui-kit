@@ -4,7 +4,7 @@ import compact from 'lodash/compact'
 import isEmpty from 'lodash/isEmpty'
 import React, { useCallback } from 'react'
 
-import { ChevronDown, Close, Check, Inbox } from '@unitifycom/icons'
+import { ChevronDown, Close, Check, Inbox } from '../../icons/index'
 import { Typography } from '../Typography'
 import type { TypographyTextProps } from '../Typography'
 import { sendAnalyticsChangeEvent, extractChildrenContent } from '../_utils/analytics.ts'

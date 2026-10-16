@@ -1,7 +1,7 @@
 import { Popover as DefaultPopover } from 'antd'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
-import { Close } from '@unitifycom/icons'
+import { Close } from '../../icons/index'
 
 import { useTourContext } from './tourContext'
 

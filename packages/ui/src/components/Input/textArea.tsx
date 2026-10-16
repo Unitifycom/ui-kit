@@ -14,7 +14,7 @@ import React, {
     TextareaHTMLAttributes,
 } from 'react'
 
-import { ArrowUp, Smile } from '@unitifycom/icons'
+import { ArrowUp, Smile } from '../../icons/index'
 
 import { Button } from '../Button'
 import { Dropdown } from '../Dropdown'

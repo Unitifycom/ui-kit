@@ -1,4 +1,4 @@
-import { ChevronDown, Minus } from '@unitifycom/icons'
+import { ChevronDown, Minus } from '../icons/index'
 import type { ComponentProps } from 'react'
 import { DatePicker } from './DatePicker.tsx'
 export function DateRangePicker(props: ComponentProps<typeof DatePicker.RangePicker>) {

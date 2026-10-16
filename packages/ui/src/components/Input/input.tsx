@@ -2,7 +2,7 @@ import { Input as DefaultInput, InputProps as DefaultInputProps } from 'antd'
 import classNames from 'classnames'
 import React, { InputHTMLAttributes, useMemo } from 'react'
 
-import { Close } from '@unitifycom/icons'
+import { Close } from '../../icons/index'
 
 import type { InputRef } from 'antd/lib/input'
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0
+
+- Merge core UI, 127 icons and shared application components into one `@unitifycom/ui` archive.
+- Expose icons through `/icons`, shared components from the root and `/common`, themes through `/themes` and CSS under the same package.
+- Remove internal package peers and the archive overrides previously required by consumers.
+- Keep theme prefixes distinct, local fonts, typed direct imports and lazy editor loading.
+- Add installation and migration instructions following the devportal UI documentation format.
+- Validate installation of exactly one archive in an isolated React application and Chromium.
+
 ## 0.1.0
 
 - Extract the UI, icons and shared component packages from Pass into an independent MIT library.

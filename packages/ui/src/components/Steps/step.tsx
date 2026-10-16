@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import { Check } from '@unitifycom/icons'
+import { Check } from '../../icons/index'
 import { Space } from '../Space'
 import { Typography } from '../Typography'
 import { Tooltip } from '../Tooltip'

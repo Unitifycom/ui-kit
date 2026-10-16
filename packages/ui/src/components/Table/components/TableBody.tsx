@@ -2,7 +2,7 @@ import { Table, flexRender, RowData } from '@tanstack/react-table'
 import React, { useCallback } from 'react'
 import { createPortal } from 'react-dom'
 
-import { Inbox } from '@unitifycom/icons'
+import { Inbox } from '../../../icons/index'
 import type { TableLabels } from '../types.ts'
 
 type TableBodyProps<TData extends RowData = RowData> = Readonly<{

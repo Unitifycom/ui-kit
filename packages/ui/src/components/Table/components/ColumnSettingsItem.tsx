@@ -4,7 +4,7 @@ import { flexRender, RowData, Table } from '@tanstack/react-table'
 import classNames from 'classnames'
 import React, { useMemo } from 'react'
 
-import { GripHorizontal } from '@unitifycom/icons'
+import { GripHorizontal } from '../../../icons/index'
 import { Space } from '../../Space'
 import { Switch } from '../../Switch'
 import { Typography } from '../../Typography'

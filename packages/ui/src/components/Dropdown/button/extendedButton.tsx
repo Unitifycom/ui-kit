@@ -3,7 +3,7 @@ import './style.less'
 import classNames from 'classnames'
 import React from 'react'
 
-import { MoreHorizontal } from '@unitifycom/icons'
+import { MoreHorizontal } from '../../../icons/index'
 
 import { ButtonProps, Button as CondoButton } from '../../Button'
 import { BUTTON_CLASS_PREFIX } from '../../Button/button'

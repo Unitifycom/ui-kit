@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react'
 
-import { IconProps } from '@unitifycom/icons'
+import { IconProps } from '../../../icons/index'
 
 import { CARD_CLASS_PREFIX } from './constants'
 

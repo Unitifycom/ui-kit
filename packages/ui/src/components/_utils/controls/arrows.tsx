@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import { ChevronRight } from '@unitifycom/icons'
+import { ChevronRight } from '../../../icons/index'
 
 type ArrowControlProps = React.HtmlHTMLAttributes<HTMLDivElement> & {
     type: 'next' | 'prev'

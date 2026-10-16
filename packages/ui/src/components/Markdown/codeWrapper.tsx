@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react'
 
-import { Copy, Check } from '@unitifycom/icons'
+import { Copy, Check } from '../../icons/index'
 import { colors } from '../../colors/index.ts'
 
 import { Tag } from '../Tag'

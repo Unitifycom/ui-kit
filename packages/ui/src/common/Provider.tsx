@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { ConfigProvider } from 'antd'
-import { UIProvider } from '@unitifycom/ui'
+import { UIProvider } from '../locale'
 import en from 'antd/es/locale/en_US'
 import ru from 'antd/es/locale/ru_RU'
 import ar from 'antd/es/locale/ar_EG'

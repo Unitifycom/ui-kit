@@ -1,22 +1,28 @@
-# Migrating a consumer from the Pass copies
+# Переход на единый @unitifycom/ui
 
-This repository is the independent library source. The copies in Pass have not been removed or switched as part of the initial library release; running APP/EU/UZ are unchanged.
+Начиная с 0.2.0 устанавливается один пакет. Рабочие копии в Pass не переключаются автоматически: обновление зависимости приложения и его выпуск выполняются отдельно.
 
-| Pass import                     | Library import                  |
-| ------------------------------- | ------------------------------- |
-| `@open-condo/ui`                | `@unitifycom/ui`                |
-| `@open-condo/icons`             | `@unitifycom/icons`             |
-| `@unitifycom/condo-ui-common`   | `@unitifycom/ui-common`         |
-| `@open-condo/ui/style-vars/css` | `@unitifycom/ui/style-vars/css` |
+| Прежний импорт                                          | Новый импорт                                    |
+| ------------------------------------------------------- | ----------------------------------------------- |
+| `@open-condo/ui` / `@unitifycom/ui`                     | `@unitifycom/ui`                                |
+| `@open-condo/icons` / `@unitifycom/icons`               | `@unitifycom/ui/icons`                          |
+| `@unitifycom/icons/Check`                               | `@unitifycom/ui/icons/Check`                    |
+| `@unitifycom/condo-ui-common` / `@unitifycom/ui-common` | `@unitifycom/ui` или `@unitifycom/ui/common`    |
+| `@unitifycom/ui-common/themes`                          | `@unitifycom/ui/themes`                         |
+| `@unitifycom/ui-common/vite`                            | `@unitifycom/ui/vite`                           |
+| `@open-condo/ui/style-vars/css`                         | `@unitifycom/ui/style-vars/css`                 |
+| `@open-condo/ui/dist/styles.min.css`                    | `@unitifycom/ui/styles.css`                     |
+| `@unitifycom/ui-common/staff.css` / `resident.css`      | `@unitifycom/ui/staff.css` / `resident.css`     |
+| `@unitifycom/ui-common/styles.css`                      | Удалить: включено в `@unitifycom/ui/styles.css` |
 
-Install all three matching versions. Keep React/ReactDOM 18.3 as shared peers. Do not put Modern Admin's React 19 into the same rendering tree.
+1. Удалите прежние зависимости icons/ui-common, source aliases и overrides на их архивы.
+2. Установите один архив 0.2.0 по [инструкции](installation.md). Обновите lockfile.
+3. Замените импорты по таблице. Публичные props компонентов сохранены; иконки доступны через `/icons`, чтобы избежать коллизий имён с UI-компонентами.
+4. Подключите одну тему Ant Design перед `/styles.css`. Удалите повторные стили и исходную сборку Less, если она больше не нужна.
+5. Оставьте один корневой провайдер. Не включайте React 19 из Modern Admin в дерево React 18.
 
-Import core `@unitifycom/ui/styles.css` once, choose `@unitifycom/ui-common/staff.css` or `/resident.css`, then import `/styles.css` for the shared wrappers. Precompiled CSS uses the current Inter/Wix tokens, the `condo-` UI prefix and `ant-` shared wrappers. A Pass page that depends on the historical Wix override needs its own parity check or a custom theme before replacing the source copy; do not assume source-Less overrides affect precompiled CSS.
+Готовый CSS использует текущие токены Inter/Wix, префиксы `condo-` и `ant-`. Прежние Less-переопределения Pass не меняют готовый CSS: проверьте шрифты и при необходимости соберите собственную тему. Не редактируйте сгенерированные token snapshots вручную.
 
-Remove source aliases and custom Less processing when consuming compiled CSS. The optional `/vite` helper and `/antd.less` remain available for a custom theme pipeline. It is unnecessary to transpile this library's TypeScript in the application.
+Телеметрия по умолчанию выключена. Если приложению нужны события Condo bridge, зарегистрируйте `setAnalyticsHandler` из `/events` и отправляйте только разрешённые данные на известный origin.
 
-All previous core component exports are retained. Add direct imports for performance where useful, for example `@unitifycom/ui/components/Button` and `@unitifycom/icons/Check`. Internal root-barrel cycles were removed; the rich-text implementation stays lazy.
-
-Analytics no longer sends values or URLs to `parent.postMessage` automatically. A consumer that needs the old Condo bridge events must opt in with `setAnalyticsHandler` from `/events` and forward only approved data to a known target origin.
-
-For each adopting miniapp, compare fonts, forms, disabled/loading controls, tooltip contrast, selected tags, tables/pagination, dates, RTL, empty states and responsive layouts before deploying. Keep a pinned previous package version for rollback.
+Перед выкладкой проверьте шрифты, формы, loading/disabled состояния, читаемость tooltip и тегов, таблицы и пагинацию, даты, RTL, пустые состояния и адаптивность. Сохраните закреплённую прежнюю версию для отката.
