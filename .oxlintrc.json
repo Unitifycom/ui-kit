@@ -1,0 +1,22 @@
+{
+    "ignorePatterns": [
+        "packages/database/generated/**",
+        "packages/contracts/src/generated.ts",
+        "packages/contracts/src/schema-types.generated.ts"
+    ],
+    "plugins": ["typescript", "react", "unicorn", "oxc"],
+    "rules": { "no-unused-vars": "error" },
+    "overrides": [
+        {
+            "files": ["packages/ui/src/**"],
+            "rules": {
+                "react/no-children-prop": "off",
+                "react/refs": "off",
+                "react/set-state-in-effect": "off",
+                "react/immutability": "off",
+                "react/incompatible-library": "off",
+                "react-hooks/exhaustive-deps": "off"
+            }
+        }
+    ]
+}

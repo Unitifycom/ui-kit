@@ -1,0 +1,32 @@
+name: Release archives
+on:
+    release:
+        types: [published]
+permissions:
+    contents: read
+jobs:
+    release:
+        runs-on: ubuntu-24.04
+        timeout-minutes: 20
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+              with:
+                  ref: ${{ github.event.release.tag_name }}
+                  persist-credentials: false
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '24.20.0'
+            - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+              with:
+                  bun-version: 1.4.2
+            - run: bun install --frozen-lockfile
+            - run: bunx playwright install --with-deps chromium
+            - run: bun run check
+            - name: Attach reviewed archives
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  GH_REPO: ${{ github.repository }}
+                  RELEASE_TAG: ${{ github.event.release.tag_name }}
+              run: gh release upload "$RELEASE_TAG" dist/packages/*.tgz dist/packages/manifest.json

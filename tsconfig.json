@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "ES2023",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "strict": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "skipLibCheck": true,
+        "jsx": "react-jsx",
+        "types": ["node", "bun", "vite/client"],
+        "lib": ["ES2023", "DOM", "DOM.Iterable"],
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "paths": {
+            "@unitifycom/icons": ["./packages/icons/src/index.ts"],
+            "@unitifycom/ui": ["./packages/ui/src/index.ts"],
+            "@unitifycom/ui/*": ["./packages/ui/src/*"],
+            "@unitifycom/ui-common": ["./packages/ui-common/src/index.ts"]
+        }
+    },
+    "include": [
+        "packages/**/*.ts",
+        "packages/**/*.tsx",
+        "scripts/**/*.ts",
+        "tests/**/*.ts",
+        "vitest.config.ts"
+    ]
+}

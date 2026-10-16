@@ -1,0 +1,33 @@
+.condo-legacy-table-frame {
+    border: 1px solid #e1e5ed;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.condo-legacy-table-frame table {
+    font: inherit;
+}
+.condo-legacy-table-frame th {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #707695;
+    font-weight: 600;
+}
+.condo-legacy-table-frame th::before {
+    display: none;
+}
+.condo-legacy-table-frame td {
+    vertical-align: top;
+    letter-spacing: -0.01em;
+    line-height: 22px;
+    border-color: #e1e5ed;
+}
+.condo-legacy-table-frame tbody > tr:last-child > td {
+    border-bottom: none;
+}
+.condo-legacy-table-frame tbody > tr:hover {
+    cursor: pointer;
+}
+.condo-legacy-pagination {
+    margin: 40px 0 16px;
+}

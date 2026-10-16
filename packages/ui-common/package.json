@@ -1,0 +1,76 @@
+{
+    "name": "@unitifycom/ui-common",
+    "version": "0.1.0",
+    "type": "module",
+    "license": "MIT",
+    "description": "Unitify shared layout, date, table and theme components",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Unitifycom/ui-kit.git",
+        "directory": "packages/ui-common"
+    },
+    "homepage": "https://github.com/Unitifycom/ui-kit#readme",
+    "bugs": {
+        "url": "https://github.com/Unitifycom/ui-kit/issues"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "sideEffects": [
+        "**/*.css",
+        "**/*.less"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./package.json": "./package.json",
+        "./themes": {
+            "types": "./dist/themes.d.ts",
+            "import": "./dist/themes.js"
+        },
+        "./vite": {
+            "types": "./dist/vite.d.ts",
+            "import": "./dist/vite.js"
+        },
+        "./styles.css": {
+            "types": "./dist/styles.d.ts",
+            "default": "./dist/styles.css"
+        },
+        "./staff.css": {
+            "types": "./dist/styles.d.ts",
+            "default": "./dist/staff.css"
+        },
+        "./resident.css": {
+            "types": "./dist/styles.d.ts",
+            "default": "./dist/resident.css"
+        },
+        "./antd.less": "./dist/antd.less",
+        "./fonts.css": {
+            "types": "./dist/styles.d.ts",
+            "default": "./dist/fonts.css"
+        }
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-intl": "^7.1.11",
+        "@unitifycom/ui": "^0.1.0",
+        "@unitifycom/icons": "^0.1.0"
+    },
+    "dependencies": {
+        "antd": "4.24.16",
+        "rc-picker": "3.14.7",
+        "dayjs": "^1.11.0"
+    }
+}

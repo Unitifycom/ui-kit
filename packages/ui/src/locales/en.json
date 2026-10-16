@@ -1,0 +1,46 @@
+{
+    "toolbar": {
+        "undo": "Undo",
+        "redo": "Redo",
+        "link": "Link",
+        "bold": "Bold",
+        "italic": "Italic",
+        "strikethrough": "Strikethrough",
+        "unorderedList": "Unordered List",
+        "orderedList": "Ordered List",
+        "taskList": "Task List",
+        "removeFormatting": "Remove Formatting",
+        "table": "Table",
+        "blockquote": "Blockquote",
+        "image": "Image",
+        "heading": "Heading"
+    },
+    "bottomPanelLabels": {
+        "emoji": "Emoji"
+    },
+    "linkModal": {
+        "urlLabel": "Link",
+        "textLabel": "Text",
+        "submitLabel": "Ok",
+        "urlPlaceholder": "https://"
+    },
+    "imageModal": {
+        "urlLabel": "Image URL",
+        "submitLabel": "Ok",
+        "urlPlaceholder": "https://"
+    },
+    "emojiDropdown": {
+        "categories": {
+            "activity": "Activity",
+            "flags": "Flags",
+            "foods": "Foods",
+            "frequent": "Frequent",
+            "nature": "Nature",
+            "objects": "Objects",
+            "people": "People",
+            "places": "Places",
+            "symbols": "Symbols"
+        }
+    },
+    "phonePlaceholder": "+1 123 456 7890"
+}

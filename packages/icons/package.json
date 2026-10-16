@@ -1,0 +1,48 @@
+{
+    "name": "@unitifycom/icons",
+    "version": "0.1.0",
+    "type": "module",
+    "license": "MIT",
+    "description": "Unitify SVG icons for React",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Unitifycom/ui-kit.git",
+        "directory": "packages/icons"
+    },
+    "homepage": "https://github.com/Unitifycom/ui-kit#readme",
+    "bugs": {
+        "url": "https://github.com/Unitifycom/ui-kit/issues"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "sideEffects": [
+        "**/*.css",
+        "**/*.less"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./package.json": "./package.json",
+        "./*": {
+            "types": "./dist/components/*.d.ts",
+            "import": "./dist/components/*.js"
+        }
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "dependencies": {}
+}

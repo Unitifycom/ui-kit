@@ -1,0 +1,46 @@
+{
+    "toolbar": {
+        "undo": "Отменить",
+        "redo": "Повторить",
+        "link": "Ссылка",
+        "bold": "Жирный",
+        "italic": "Курсив",
+        "strikethrough": "Зачёркнутый",
+        "unorderedList": "Маркированный список",
+        "orderedList": "Нумерованный список",
+        "taskList": "Список задач",
+        "removeFormatting": "Очистить форматирование",
+        "table": "Таблица",
+        "blockquote": "Цитата",
+        "image": "Изображение",
+        "heading": "Заголовок"
+    },
+    "bottomPanelLabels": {
+        "emoji": "Эмодзи"
+    },
+    "linkModal": {
+        "urlLabel": "Ссылка",
+        "textLabel": "Текст",
+        "submitLabel": "ОК",
+        "urlPlaceholder": "https://"
+    },
+    "imageModal": {
+        "urlLabel": "Адрес изображения",
+        "submitLabel": "ОК",
+        "urlPlaceholder": "https://"
+    },
+    "emojiDropdown": {
+        "categories": {
+            "activity": "Активности",
+            "flags": "Флаги",
+            "foods": "Еда",
+            "frequent": "Часто используемые",
+            "nature": "Природа",
+            "objects": "Предметы",
+            "people": "Люди",
+            "places": "Места",
+            "symbols": "Символы"
+        }
+    },
+    "phonePlaceholder": "+1 123 456 7890"
+}
